@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E090F602045251900D1FB5F /* NBAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F5F2045251900D1FB5F /* NBAUtils.m */; };
+		0E090F6420454CB400D1FB5F /* NBAGameStatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F6320454CB400D1FB5F /* NBAGameStatCollectionViewCell.m */; };
+		0E090F6B204647B600D1FB5F /* NBAVOGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F6A204647B600D1FB5F /* NBAVOGame.m */; };
+		0E090F6E2046486700D1FB5F /* NBAVOPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F6D2046486700D1FB5F /* NBAVOPeriod.m */; };
+		0E090F71204648D800D1FB5F /* NBAVOTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F70204648D800D1FB5F /* NBAVOTeam.m */; };
+		0E090F7520464E5A00D1FB5F /* NBAVOStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F7420464E5A00D1FB5F /* NBAVOStat.m */; };
+		0E090F7820464ED200D1FB5F /* NBAVOStatTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F7720464ED200D1FB5F /* NBAVOStatTeam.m */; };
+		0E090F7B20464F0900D1FB5F /* NBAVOStatLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F7A20464F0900D1FB5F /* NBAVOStatLeader.m */; };
+		0E090F7E20464F7000D1FB5F /* NBAVOStatLeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F7D20464F7000D1FB5F /* NBAVOStatLeaderItem.m */; };
+		0E090F8120464F8300D1FB5F /* NBAVOPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */; };
+		0E090F882046765F00D1FB5F /* NBAGameStatCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */; };
+		0E8FEE24203BB3E900297CE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE23203BB3E900297CE3 /* AppDelegate.m */; };
+		0E8FEE27203BB3E900297CE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE26203BB3E900297CE3 /* ViewController.m */; };
+		0E8FEE2A203BB3E900297CE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FEE28203BB3E900297CE3 /* Main.storyboard */; };
+		0E8FEE2C203BB3E900297CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FEE2B203BB3E900297CE3 /* Assets.xcassets */; };
+		0E8FEE2F203BB3E900297CE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FEE2D203BB3E900297CE3 /* LaunchScreen.storyboard */; };
+		0E8FEE32203BB3E900297CE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE31203BB3E900297CE3 /* main.m */; };
+		0EA82726203D4AB2005DEE22 /* NBAGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA82725203D4AB2005DEE22 /* NBAGameViewController.m */; };
+		0EA82734203EA6FE005DEE22 /* UIImageView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA82733203EA6FE005DEE22 /* UIImageView+WebImage.m */; };
+		0EA8273C2043B6E8005DEE22 /* default_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8273A2043B6E8005DEE22 /* default_player.png */; };
+		0EA8273D2043B6E8005DEE22 /* nba_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8273B2043B6E8005DEE22 /* nba_logo.png */; };
+		0EA827442043D054005DEE22 /* NBAGameInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA827432043D054005DEE22 /* NBAGameInfoTableViewCell.m */; };
+		0EA827472043D0C8005DEE22 /* NBAGameInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA827462043D0C8005DEE22 /* NBAGameInfoViewModel.m */; };
+		0EA8274F2043DD8E005DEE22 /* NBAGameStatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8274E2043DD8E005DEE22 /* NBAGameStatTableViewCell.m */; };
+		0EA827522043DE00005DEE22 /* NBAGameStatViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA827512043DE00005DEE22 /* NBAGameStatViewModel.m */; };
+		0EA827582043F725005DEE22 /* NBANoGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA827572043F725005DEE22 /* NBANoGameTableViewCell.m */; };
+		0EA8275B2043F737005DEE22 /* NBANoGameViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8275A2043F737005DEE22 /* NBANoGameViewModel.m */; };
+		0EA8275E20450259005DEE22 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8275D20450259005DEE22 /* UIView+Layout.m */; };
+		62F4D8B5F8799340F102A401 /* Pods_WatchNBA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E090F5E2045251900D1FB5F /* NBAUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAUtils.h; sourceTree = "<group>"; };
+		0E090F5F2045251900D1FB5F /* NBAUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAUtils.m; sourceTree = "<group>"; };
+		0E090F6220454CB400D1FB5F /* NBAGameStatCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewCell.h; sourceTree = "<group>"; };
+		0E090F6320454CB400D1FB5F /* NBAGameStatCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameStatCollectionViewCell.m; sourceTree = "<group>"; };
+		0E090F69204647B600D1FB5F /* NBAVOGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOGame.h; sourceTree = "<group>"; };
+		0E090F6A204647B600D1FB5F /* NBAVOGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOGame.m; sourceTree = "<group>"; };
+		0E090F6C2046486700D1FB5F /* NBAVOPeriod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOPeriod.h; sourceTree = "<group>"; };
+		0E090F6D2046486700D1FB5F /* NBAVOPeriod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOPeriod.m; sourceTree = "<group>"; };
+		0E090F6F204648D800D1FB5F /* NBAVOTeam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOTeam.h; sourceTree = "<group>"; };
+		0E090F70204648D800D1FB5F /* NBAVOTeam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOTeam.m; sourceTree = "<group>"; };
+		0E090F7320464E5A00D1FB5F /* NBAVOStat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOStat.h; sourceTree = "<group>"; };
+		0E090F7420464E5A00D1FB5F /* NBAVOStat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOStat.m; sourceTree = "<group>"; };
+		0E090F7620464ED200D1FB5F /* NBAVOStatTeam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOStatTeam.h; sourceTree = "<group>"; };
+		0E090F7720464ED200D1FB5F /* NBAVOStatTeam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOStatTeam.m; sourceTree = "<group>"; };
+		0E090F7920464F0900D1FB5F /* NBAVOStatLeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOStatLeader.h; sourceTree = "<group>"; };
+		0E090F7A20464F0900D1FB5F /* NBAVOStatLeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOStatLeader.m; sourceTree = "<group>"; };
+		0E090F7C20464F7000D1FB5F /* NBAVOStatLeaderItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOStatLeaderItem.h; sourceTree = "<group>"; };
+		0E090F7D20464F7000D1FB5F /* NBAVOStatLeaderItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOStatLeaderItem.m; sourceTree = "<group>"; };
+		0E090F7F20464F8300D1FB5F /* NBAVOPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOPlayer.h; sourceTree = "<group>"; };
+		0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOPlayer.m; sourceTree = "<group>"; };
+		0E090F862046765F00D1FB5F /* NBAGameStatCollectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewModel.h; sourceTree = "<group>"; };
+		0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameStatCollectionViewModel.m; sourceTree = "<group>"; };
+		0E090F89204676A600D1FB5F /* NBAGameStatCollectionViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewModelProtocol.h; sourceTree = "<group>"; };
+		0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8FEE22203BB3E900297CE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0E8FEE23203BB3E900297CE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0E8FEE25203BB3E900297CE3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0E8FEE26203BB3E900297CE3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0E8FEE29203BB3E900297CE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E8FEE2B203BB3E900297CE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E8FEE2E203BB3E900297CE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0E8FEE30203BB3E900297CE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E8FEE31203BB3E900297CE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0EA82722203D43AE005DEE22 /* NBAApiUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAApiUrl.h; sourceTree = "<group>"; };
+		0EA82724203D4AB2005DEE22 /* NBAGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameViewController.h; sourceTree = "<group>"; };
+		0EA82725203D4AB2005DEE22 /* NBAGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameViewController.m; sourceTree = "<group>"; };
+		0EA82732203EA6FE005DEE22 /* UIImageView+WebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebImage.h"; sourceTree = "<group>"; };
+		0EA82733203EA6FE005DEE22 /* UIImageView+WebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImage.m"; sourceTree = "<group>"; };
+		0EA8273A2043B6E8005DEE22 /* default_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_player.png; sourceTree = "<group>"; };
+		0EA8273B2043B6E8005DEE22 /* nba_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nba_logo.png; sourceTree = "<group>"; };
+		0EA827422043D054005DEE22 /* NBAGameInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameInfoTableViewCell.h; sourceTree = "<group>"; };
+		0EA827432043D054005DEE22 /* NBAGameInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameInfoTableViewCell.m; sourceTree = "<group>"; };
+		0EA827452043D0C8005DEE22 /* NBAGameInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameInfoViewModel.h; sourceTree = "<group>"; };
+		0EA827462043D0C8005DEE22 /* NBAGameInfoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameInfoViewModel.m; sourceTree = "<group>"; };
+		0EA827482043D398005DEE22 /* NBAGameTableViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameTableViewModelProtocol.h; sourceTree = "<group>"; };
+		0EA8274D2043DD8E005DEE22 /* NBAGameStatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatTableViewCell.h; sourceTree = "<group>"; };
+		0EA8274E2043DD8E005DEE22 /* NBAGameStatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameStatTableViewCell.m; sourceTree = "<group>"; };
+		0EA827502043DE00005DEE22 /* NBAGameStatViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatViewModel.h; sourceTree = "<group>"; };
+		0EA827512043DE00005DEE22 /* NBAGameStatViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameStatViewModel.m; sourceTree = "<group>"; };
+		0EA827562043F725005DEE22 /* NBANoGameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBANoGameTableViewCell.h; sourceTree = "<group>"; };
+		0EA827572043F725005DEE22 /* NBANoGameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBANoGameTableViewCell.m; sourceTree = "<group>"; };
+		0EA827592043F737005DEE22 /* NBANoGameViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBANoGameViewModel.h; sourceTree = "<group>"; };
+		0EA8275A2043F737005DEE22 /* NBANoGameViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBANoGameViewModel.m; sourceTree = "<group>"; };
+		0EA8275C20450259005DEE22 /* UIView+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		0EA8275D20450259005DEE22 /* UIView+Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		0EE66954204CDD1400361E12 /* NBAGameTableViewReloadDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameTableViewReloadDelegate.h; sourceTree = "<group>"; };
+		59C5F710A6ED0D7CB4963B11 /* Pods-WatchNBA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchNBA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA.debug.xcconfig"; sourceTree = "<group>"; };
+		86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchNBA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		921CFC8B1FC9E97E294F782C /* Pods-WatchNBA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchNBA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E8FEE1C203BB3E900297CE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62F4D8B5F8799340F102A401 /* Pods_WatchNBA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E090F6120454C8D00D1FB5F /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F6220454CB400D1FB5F /* NBAGameStatCollectionViewCell.h */,
+				0E090F6320454CB400D1FB5F /* NBAGameStatCollectionViewCell.m */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		0E090F652046470C00D1FB5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F69204647B600D1FB5F /* NBAVOGame.h */,
+				0E090F6A204647B600D1FB5F /* NBAVOGame.m */,
+				0E090F6C2046486700D1FB5F /* NBAVOPeriod.h */,
+				0E090F6D2046486700D1FB5F /* NBAVOPeriod.m */,
+				0E090F6F204648D800D1FB5F /* NBAVOTeam.h */,
+				0E090F70204648D800D1FB5F /* NBAVOTeam.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E090F7220464E4D00D1FB5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F7320464E5A00D1FB5F /* NBAVOStat.h */,
+				0E090F7420464E5A00D1FB5F /* NBAVOStat.m */,
+				0E090F7620464ED200D1FB5F /* NBAVOStatTeam.h */,
+				0E090F7720464ED200D1FB5F /* NBAVOStatTeam.m */,
+				0E090F7920464F0900D1FB5F /* NBAVOStatLeader.h */,
+				0E090F7A20464F0900D1FB5F /* NBAVOStatLeader.m */,
+				0E090F7C20464F7000D1FB5F /* NBAVOStatLeaderItem.h */,
+				0E090F7D20464F7000D1FB5F /* NBAVOStatLeaderItem.m */,
+				0E090F7F20464F8300D1FB5F /* NBAVOPlayer.h */,
+				0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E090F852046764500D1FB5F /* CollectionViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F862046765F00D1FB5F /* NBAGameStatCollectionViewModel.h */,
+				0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */,
+				0E090F89204676A600D1FB5F /* NBAGameStatCollectionViewModelProtocol.h */,
+			);
+			path = CollectionViewModel;
+			sourceTree = "<group>";
+		};
+		0E090F8A2046817100D1FB5F /* StatCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F852046764500D1FB5F /* CollectionViewModel */,
+				0E090F6120454C8D00D1FB5F /* CollectionViewCell */,
+			);
+			path = StatCollectionView;
+			sourceTree = "<group>";
+		};
+		0E8FEE16203BB3E900297CE3 = {
+			isa = PBXGroup;
+			children = (
+				0E8FEE21203BB3E900297CE3 /* WatchNBA */,
+				0E8FEE20203BB3E900297CE3 /* Products */,
+				F6BD8EA793C07930DCC82BF5 /* Pods */,
+				400CCCE99FF3EE84A19F9C0B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0E8FEE20203BB3E900297CE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E8FEE21203BB3E900297CE3 /* WatchNBA */ = {
+			isa = PBXGroup;
+			children = (
+				0EA82727203D5D4E005DEE22 /* Resources */,
+				0EA827532043F6E8005DEE22 /* NoGameView */,
+				0EA8273E2043CD1F005DEE22 /* GameInfoView */,
+				0EA8273F2043CD29005DEE22 /* GameStatView */,
+				0EA82723203D4A7D005DEE22 /* GameViewController */,
+				0EA82721203D4394005DEE22 /* Common */,
+				0E8FEE22203BB3E900297CE3 /* AppDelegate.h */,
+				0E8FEE23203BB3E900297CE3 /* AppDelegate.m */,
+				0E8FEE25203BB3E900297CE3 /* ViewController.h */,
+				0E8FEE26203BB3E900297CE3 /* ViewController.m */,
+			);
+			path = WatchNBA;
+			sourceTree = "<group>";
+		};
+		0EA82721203D4394005DEE22 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0EA82722203D43AE005DEE22 /* NBAApiUrl.h */,
+				0EA82732203EA6FE005DEE22 /* UIImageView+WebImage.h */,
+				0EA82733203EA6FE005DEE22 /* UIImageView+WebImage.m */,
+				0EA8275C20450259005DEE22 /* UIView+Layout.h */,
+				0EA8275D20450259005DEE22 /* UIView+Layout.m */,
+				0E090F5E2045251900D1FB5F /* NBAUtils.h */,
+				0E090F5F2045251900D1FB5F /* NBAUtils.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0EA82723203D4A7D005DEE22 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0EA82724203D4AB2005DEE22 /* NBAGameViewController.h */,
+				0EA82725203D4AB2005DEE22 /* NBAGameViewController.m */,
+				0EA827482043D398005DEE22 /* NBAGameTableViewModelProtocol.h */,
+				0EE66954204CDD1400361E12 /* NBAGameTableViewReloadDelegate.h */,
+			);
+			path = GameViewController;
+			sourceTree = "<group>";
+		};
+		0EA82727203D5D4E005DEE22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827392043B6E8005DEE22 /* Images */,
+				0E8FEE28203BB3E900297CE3 /* Main.storyboard */,
+				0E8FEE2B203BB3E900297CE3 /* Assets.xcassets */,
+				0E8FEE2D203BB3E900297CE3 /* LaunchScreen.storyboard */,
+				0E8FEE30203BB3E900297CE3 /* Info.plist */,
+				0E8FEE31203BB3E900297CE3 /* main.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0EA827392043B6E8005DEE22 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8273A2043B6E8005DEE22 /* default_player.png */,
+				0EA8273B2043B6E8005DEE22 /* nba_logo.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		0EA8273E2043CD1F005DEE22 /* GameInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F652046470C00D1FB5F /* Model */,
+				0EA827412043CF18005DEE22 /* ViewModel */,
+				0EA827402043CF0A005DEE22 /* Cell */,
+			);
+			path = GameInfoView;
+			sourceTree = "<group>";
+		};
+		0EA8273F2043CD29005DEE22 /* GameStatView */ = {
+			isa = PBXGroup;
+			children = (
+				0E090F7220464E4D00D1FB5F /* Model */,
+				0EA8274A2043DD44005DEE22 /* ViewModel */,
+				0EA827492043DD3E005DEE22 /* Cell */,
+				0E090F8A2046817100D1FB5F /* StatCollectionView */,
+			);
+			path = GameStatView;
+			sourceTree = "<group>";
+		};
+		0EA827402043CF0A005DEE22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827422043D054005DEE22 /* NBAGameInfoTableViewCell.h */,
+				0EA827432043D054005DEE22 /* NBAGameInfoTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0EA827412043CF18005DEE22 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827452043D0C8005DEE22 /* NBAGameInfoViewModel.h */,
+				0EA827462043D0C8005DEE22 /* NBAGameInfoViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EA827492043DD3E005DEE22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8274D2043DD8E005DEE22 /* NBAGameStatTableViewCell.h */,
+				0EA8274E2043DD8E005DEE22 /* NBAGameStatTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0EA8274A2043DD44005DEE22 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827502043DE00005DEE22 /* NBAGameStatViewModel.h */,
+				0EA827512043DE00005DEE22 /* NBAGameStatViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EA827532043F6E8005DEE22 /* NoGameView */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827552043F6FC005DEE22 /* ViewModel */,
+				0EA827542043F6F7005DEE22 /* Cell */,
+			);
+			path = NoGameView;
+			sourceTree = "<group>";
+		};
+		0EA827542043F6F7005DEE22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827562043F725005DEE22 /* NBANoGameTableViewCell.h */,
+				0EA827572043F725005DEE22 /* NBANoGameTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0EA827552043F6FC005DEE22 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EA827592043F737005DEE22 /* NBANoGameViewModel.h */,
+				0EA8275A2043F737005DEE22 /* NBANoGameViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		400CCCE99FF3EE84A19F9C0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6BD8EA793C07930DCC82BF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59C5F710A6ED0D7CB4963B11 /* Pods-WatchNBA.debug.xcconfig */,
+				921CFC8B1FC9E97E294F782C /* Pods-WatchNBA.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8FEE1E203BB3E900297CE3 /* WatchNBA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8FEE35203BB3E900297CE3 /* Build configuration list for PBXNativeTarget "WatchNBA" */;
+			buildPhases = (
+				0F4071551ADCF2A2F19B1194 /* [CP] Check Pods Manifest.lock */,
+				0E8FEE1B203BB3E900297CE3 /* Sources */,
+				0E8FEE1C203BB3E900297CE3 /* Frameworks */,
+				0E8FEE1D203BB3E900297CE3 /* Resources */,
+				FFD802B8F56A6A310664F5D7 /* [CP] Embed Pods Frameworks */,
+				88F0E3E6558FDEEF37D0DBBC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchNBA;
+			productName = WatchNBA;
+			productReference = 0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E8FEE17203BB3E900297CE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = tigi;
+				TargetAttributes = {
+					0E8FEE1E203BB3E900297CE3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0E8FEE1A203BB3E900297CE3 /* Build configuration list for PBXProject "WatchNBA" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E8FEE16203BB3E900297CE3;
+			productRefGroup = 0E8FEE20203BB3E900297CE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8FEE1E203BB3E900297CE3 /* WatchNBA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E8FEE1D203BB3E900297CE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8FEE2F203BB3E900297CE3 /* LaunchScreen.storyboard in Resources */,
+				0EA8273D2043B6E8005DEE22 /* nba_logo.png in Resources */,
+				0E8FEE2C203BB3E900297CE3 /* Assets.xcassets in Resources */,
+				0EA8273C2043B6E8005DEE22 /* default_player.png in Resources */,
+				0E8FEE2A203BB3E900297CE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F4071551ADCF2A2F19B1194 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WatchNBA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F0E3E6558FDEEF37D0DBBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFD802B8F56A6A310664F5D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E8FEE1B203BB3E900297CE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EA827522043DE00005DEE22 /* NBAGameStatViewModel.m in Sources */,
+				0E090F6E2046486700D1FB5F /* NBAVOPeriod.m in Sources */,
+				0E090F7820464ED200D1FB5F /* NBAVOStatTeam.m in Sources */,
+				0E090F7B20464F0900D1FB5F /* NBAVOStatLeader.m in Sources */,
+				0E8FEE27203BB3E900297CE3 /* ViewController.m in Sources */,
+				0EA827582043F725005DEE22 /* NBANoGameTableViewCell.m in Sources */,
+				0E090F7520464E5A00D1FB5F /* NBAVOStat.m in Sources */,
+				0EA82734203EA6FE005DEE22 /* UIImageView+WebImage.m in Sources */,
+				0E090F6B204647B600D1FB5F /* NBAVOGame.m in Sources */,
+				0EA827442043D054005DEE22 /* NBAGameInfoTableViewCell.m in Sources */,
+				0EA8275E20450259005DEE22 /* UIView+Layout.m in Sources */,
+				0E8FEE32203BB3E900297CE3 /* main.m in Sources */,
+				0EA82726203D4AB2005DEE22 /* NBAGameViewController.m in Sources */,
+				0EA8274F2043DD8E005DEE22 /* NBAGameStatTableViewCell.m in Sources */,
+				0E090F602045251900D1FB5F /* NBAUtils.m in Sources */,
+				0EA827472043D0C8005DEE22 /* NBAGameInfoViewModel.m in Sources */,
+				0E8FEE24203BB3E900297CE3 /* AppDelegate.m in Sources */,
+				0E090F8120464F8300D1FB5F /* NBAVOPlayer.m in Sources */,
+				0E090F7E20464F7000D1FB5F /* NBAVOStatLeaderItem.m in Sources */,
+				0E090F882046765F00D1FB5F /* NBAGameStatCollectionViewModel.m in Sources */,
+				0E090F71204648D800D1FB5F /* NBAVOTeam.m in Sources */,
+				0E090F6420454CB400D1FB5F /* NBAGameStatCollectionViewCell.m in Sources */,
+				0EA8275B2043F737005DEE22 /* NBANoGameViewModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0E8FEE28203BB3E900297CE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E8FEE29203BB3E900297CE3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0E8FEE2D203BB3E900297CE3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E8FEE2E203BB3E900297CE3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E8FEE33203BB3E900297CE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0E8FEE34203BB3E900297CE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E8FEE36203BB3E900297CE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59C5F710A6ED0D7CB4963B11 /* Pods-WatchNBA.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WatchNBA/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigi.WatchNBA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E8FEE37203BB3E900297CE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 921CFC8B1FC9E97E294F782C /* Pods-WatchNBA.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WatchNBA/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigi.WatchNBA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E8FEE1A203BB3E900297CE3 /* Build configuration list for PBXProject "WatchNBA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8FEE33203BB3E900297CE3 /* Debug */,
+				0E8FEE34203BB3E900297CE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E8FEE35203BB3E900297CE3 /* Build configuration list for PBXNativeTarget "WatchNBA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8FEE36203BB3E900297CE3 /* Debug */,
+				0E8FEE37203BB3E900297CE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E8FEE17203BB3E900297CE3 /* Project object */;
+}
