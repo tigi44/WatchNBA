@@ -14,7 +14,7 @@
 #import "NBAApiUrl.h"
 #import "NBAGameTableViewReloadDelegate.h"
 
-const static NSInteger gGameReloadTimeInterval = 1;
+const static NSTimeInterval gGameReloadTimeInterval = 0.05;
 const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
 @interface NBAGameViewController() <UITableViewDelegate, UITableViewDataSource>
@@ -33,8 +33,8 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 @implementation NBAGameViewController {
     NSArray<id<NBAGameTableViewModelProtocol>> *_viewModels;
     NSTimer *_reloadTimer;
-    NSInteger _reloadTime;
-    NSInteger _reloadCurrentTime;
+    float _reloadTime;
+    float _reloadCurrentTime;
 }
 
 - (instancetype)initWithGame:(NBAVOGame *)aGame index:(NSInteger)aIndex {
@@ -196,15 +196,15 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
 - (void)reloadCount {
     if (_delegate) {
-        if (_reloadCurrentTime == 0) {
+        if (_reloadCurrentTime <= 0) {
             _reloadCurrentTime = _reloadTime;
         }
         
-        _reloadCurrentTime--;
+        _reloadCurrentTime -= gGameReloadTimeInterval;
         float sProgress = 1 - ((float)_reloadCurrentTime/_reloadTime);
         [_delegate reloadProgress:sProgress];
         
-        if (_reloadCurrentTime <= 0) {
+        if (sProgress >= 1) {
             [self stopReloadTimer];
             [self reloadGameData];
             [self setupReloadTimer];
