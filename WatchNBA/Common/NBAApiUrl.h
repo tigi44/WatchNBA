@@ -13,11 +13,12 @@
 
 static const NSInteger gNbaApiReloadTime = 10;
 
-#define NBA_TODAY_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils todayEsternDate]];
-#define NBA_YESTERDAY_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils yesterdayEsternDate]];
+#define NBA_DOMAIN @"https://data.nba.net"
 
-//#define NBA_TODAY_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/20180221/scoreboard.json"];
-//#define NBA_YESTERDAY_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/20180221/scoreboard.json"];
+#define NBA_TODAY_API @"https://data.nba.net/prod/v3/today.json"
+
+#define NBA_TODAY_EST_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils todayEsternDate]];
+#define NBA_YESTERDAY_EST_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils yesterdayEsternDate]];
 
 #define NBA_BOX_SCORE_API(aGameDate, aGameId) [NSString stringWithFormat:@"https://data.nba.net/prod/v1/%@/%@_boxscore.json", aGameDate, aGameId];
 #define NBA_TEAM_LOGO_IMG_URL(aTeamCode) [NSString stringWithFormat:@"https://neulionms-a.akamaihd.net/nba/player/v1/nba/site/images/teams/%@_p.png", aTeamCode];

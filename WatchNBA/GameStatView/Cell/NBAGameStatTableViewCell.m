@@ -62,7 +62,7 @@
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    [self setupSubview];
+    //[self setupSubview];
 }
 
 #pragma mark - UICollectionViewDataSource

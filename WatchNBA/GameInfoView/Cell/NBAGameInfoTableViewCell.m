@@ -146,6 +146,22 @@ static const CGSize kLogoImageSize = {100.f, 100.f};
     
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    [_reloadProgressView setProgress:0];
+    [_vTeamLogoImageView setImage:nil];
+    [_hTeamLogoImageView setImage:nil];
+    [_vTeamTriCodeLabel setText:@""];
+    [_hTeamTriCodeLabel setText:@""];
+    [_vTeamScoreLabel setText:@""];
+    [_hTeamScoreLabel setText:@""];
+    
+    [_gameTimeLabel setText:@""];
+    [_gameClockLabel setText:@""];
+    
+    [_startDateLabel setText:@""];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

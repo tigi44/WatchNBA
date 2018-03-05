@@ -28,16 +28,16 @@
     [super viewDidLoad];
     
     [self setup];
+    
     [AnyPromise promiseWithResolverBlock:^(PMKResolver resolver) {
-//        NSString *sURLString = NBA_YESTERDAY_SCOREBOARD_API;
-//        [self setupGamesByURLString:sURLString promiseResolver:resolver];
-        resolver(nil);
+        [self setupTodayApiPromiseResolver:resolver];
     }].then(^(id object) {
+        NSString *todayScoreboardApiURLString = [object objectForKey:@"todayScoreboard"];
+        todayScoreboardApiURLString = [NBA_DOMAIN stringByAppendingString:todayScoreboardApiURLString];
         return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolver) {
-            NSString *sURLString = NBA_TODAY_SCOREBOARD_API;
-            [self setupGamesByURLString:sURLString promiseResolver:resolver];
+            [self setupGamesByURLString:todayScoreboardApiURLString promiseResolver:resolver];
         }];
-    }).then(^(id object) {
+    }).ensure(^{
         [self setupPageViewController];
     });
 }
@@ -49,10 +49,22 @@
     _games = [NSArray array];
 }
 
+- (void)setupTodayApiPromiseResolver:(PMKResolver)aResolver {
+    NSString *sTodayApiURLString = NBA_TODAY_API;
+    AFHTTPSessionManager *sManager = [AFHTTPSessionManager manager];
+    [sManager GET:sTodayApiURLString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSDictionary *sDic = (NSDictionary *)responseObject;
+        NSDictionary *sLinks = [sDic objectForKey:@"links"];
+        aResolver(sLinks);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 - (void)setupGamesByURLString:(NSString *)aURLString promiseResolver:(PMKResolver)aResolver {
     AFHTTPSessionManager *sManager = [AFHTTPSessionManager manager];
     [sManager GET:aURLString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        
         NSDictionary *sDic = (NSDictionary *)responseObject;
         NSInteger sNumGame = [[sDic objectForKey:@"numGames"] integerValue];
         NSArray<NSDictionary *> *sGames = [sDic objectForKey:@"games"];
