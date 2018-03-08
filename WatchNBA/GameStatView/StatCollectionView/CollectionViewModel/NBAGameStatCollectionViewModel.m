@@ -9,6 +9,8 @@
 #import "NBAGameStatCollectionViewModel.h"
 #import "NBAApiUrl.h"
 #import "UIImageView+WebImage.h"
+#import <AFNetworking/AFNetworking.h>
+#import "NBAVOPlayerBio.h"
 
 const static NSInteger gStatCollectionViewRowCount = 3;
 
@@ -62,11 +64,17 @@ const static NSInteger gStatCollectionViewRowCount = 3;
     NSString *sValueLabelText = [_leaderItems[[aIndexPath row]] value];
     NSArray *sPlayers = [_leaderItems[[aIndexPath row]] players];
     
+    [[sCell valueLabel] setText:sValueLabelText];
+    [sCell setImageSideOption:_imageSideOption];
     if ([sPlayers count] != 0) {
-        NSString *sPlayerImageURLString = NBA_PLAYER_IMG_URL([[sPlayers objectAtIndex:0] personId]);
+        NBAVOPlayer *sPlayer = [sPlayers objectAtIndex:0];
+        NSString *sPlayerId = [sPlayer personId];
+        NSString *sPlayerName;
         if ([sPlayers count] > 1) {
-            sPlayerImageURLString = NBA_PLAYER_MULTI_IMG_URL;
+            sPlayerId = nil;
+            sPlayerName = @"MultiPlayer";
         }
+        NSString *sPlayerImageURLString = NBA_PLAYER_IMG_URL(sPlayerId);
         [[sCell playerImageView] setImageWithURLString:sPlayerImageURLString
                                       placeholderImage:[UIImage imageNamed:@"nba_logo.png"]
                                          loadFailImage:[UIImage imageNamed:@"default_player.png"]
@@ -76,11 +84,28 @@ const static NSInteger gStatCollectionViewRowCount = 3;
                                                  } else {
                                                  }
                                              }];
+
+        if (!sPlayerName) {
+            AFHTTPSessionManager *sManager = [AFHTTPSessionManager manager];
+            NSString *sPlayerBioApiURLString = NBA_PLAYER_BIO_API(sPlayerId);
+            [sManager GET:sPlayerBioApiURLString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+                NSDictionary *sDic = (NSDictionary *)responseObject;
+                NBAVOPlayerBio *sPlayerBio = [[NBAVOPlayerBio alloc] initWithData:[sDic objectForKey:@"Bio"]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[sCell playerNameLabel] setText:[sPlayerBio playerName]];
+                    [sCell setNeedsLayout];
+                });
+            } failure:^(NSURLSessionTask *operation, NSError *error) {
+                NBADebugLog(@"Error: %@", error);
+                [[sCell playerNameLabel] setText:@"NONAME"];
+                [sCell setNeedsLayout];
+            }];
+        } else {
+            [[sCell playerNameLabel] setText:sPlayerName];
+        }
     }
-    [[sCell valueLabel] setText:sValueLabelText];
-    [sCell setImageSideOption:_imageSideOption];
-    //[sCell layoutIfNeeded];
-    [sCell layoutSubviews];
+    
+    [sCell setNeedsLayout];
     return sCell;
 }
 

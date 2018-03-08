@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, NBAGameStatCollectionViewCellImageSideOption)
 
 @property(nonatomic, readonly)UILabel *valueLabel;
 @property(nonatomic, readonly)UIImageView *playerImageView;
+@property(nonatomic, readonly)UILabel *playerNameLabel;
 @property(nonatomic, assign)NBAGameStatCollectionViewCellImageSideOption imageSideOption;
 
 @end

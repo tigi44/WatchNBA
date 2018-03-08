@@ -18,6 +18,7 @@
 		0E090F7E20464F7000D1FB5F /* NBAVOStatLeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F7D20464F7000D1FB5F /* NBAVOStatLeaderItem.m */; };
 		0E090F8120464F8300D1FB5F /* NBAVOPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */; };
 		0E090F882046765F00D1FB5F /* NBAGameStatCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */; };
+		0E1EC2552050F7BA001B801F /* NBAVOPlayerBio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */; };
 		0E8FEE24203BB3E900297CE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE23203BB3E900297CE3 /* AppDelegate.m */; };
 		0E8FEE27203BB3E900297CE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE26203BB3E900297CE3 /* ViewController.m */; };
 		0E8FEE2A203BB3E900297CE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FEE28203BB3E900297CE3 /* Main.storyboard */; };
@@ -62,6 +63,8 @@
 		0E090F862046765F00D1FB5F /* NBAGameStatCollectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewModel.h; sourceTree = "<group>"; };
 		0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAGameStatCollectionViewModel.m; sourceTree = "<group>"; };
 		0E090F89204676A600D1FB5F /* NBAGameStatCollectionViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewModelProtocol.h; sourceTree = "<group>"; };
+		0E1EC2532050F7BA001B801F /* NBAVOPlayerBio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOPlayerBio.h; sourceTree = "<group>"; };
+		0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOPlayerBio.m; sourceTree = "<group>"; };
 		0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8FEE22203BB3E900297CE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E8FEE23203BB3E900297CE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				0E090F7D20464F7000D1FB5F /* NBAVOStatLeaderItem.m */,
 				0E090F7F20464F8300D1FB5F /* NBAVOPlayer.h */,
 				0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */,
+				0E1EC2532050F7BA001B801F /* NBAVOPlayerBio.h */,
+				0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				0EA827582043F725005DEE22 /* NBANoGameTableViewCell.m in Sources */,
 				0E090F7520464E5A00D1FB5F /* NBAVOStat.m in Sources */,
 				0EA82734203EA6FE005DEE22 /* UIImageView+WebImage.m in Sources */,
+				0E1EC2552050F7BA001B801F /* NBAVOPlayerBio.m in Sources */,
 				0E090F6B204647B600D1FB5F /* NBAVOGame.m in Sources */,
 				0EA827442043D054005DEE22 /* NBAGameInfoTableViewCell.m in Sources */,
 				0EA8275E20450259005DEE22 /* UIView+Layout.m in Sources */,

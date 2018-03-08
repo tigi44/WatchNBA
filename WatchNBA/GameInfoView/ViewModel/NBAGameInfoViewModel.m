@@ -112,7 +112,7 @@
     
     [[sTabelViewCell gameTimeLabel] setText:_gameTime];
     [[sTabelViewCell gameClockLabel] setText:_gameClock];
-    [[sTabelViewCell startDateLabel] setText:[_startDate stringByAppendingFormat:@" %@", _gameId]];
+    [[sTabelViewCell startDateLabel] setText:_startDate];
     _reloadProgressView = [sTabelViewCell reloadProgressView];
     [sTabelViewCell layoutIfNeeded];
     
