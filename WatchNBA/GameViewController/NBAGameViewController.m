@@ -37,17 +37,17 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
     float _reloadCurrentTime;
 }
 
-- (instancetype)initWithGame:(NBAVOGame *)aGame index:(NSInteger)aIndex {
+- (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex {
     self = [super init];
     if (self) {
-        _game = aGame;
+        _game = [[NBAVOGame alloc] initWithData:aData];
         _index = aIndex;
     }
     return self;
 }
 
 - (instancetype)init {
-    return [self initWithGame:nil index:0];
+    return [self initWithGameData:nil index:0];
 }
 
 - (void)loadView {
@@ -87,7 +87,6 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -175,8 +174,6 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
                     _reloadTime *= gBefoeGameTimeIntervalWeight;
                 }
                 _reloadTimer = [NSTimer scheduledTimerWithTimeInterval:gGameReloadTimeInterval target:self selector:@selector(reloadCount) userInfo:nil repeats:YES];
-//                NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-//                [runLoop addTimer:_reloadTimer forMode:NSDefaultRunLoopMode];
             }
         }
     } else {
@@ -217,10 +214,10 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
 - (void)reloadGameData {
     NSString *sUrlString = NBA_BOX_SCORE_API([_game startDateEastern], [_game gameId]);
-    NBADebugLog(@"reload GameId : %@", [_game gameId]);
     AFHTTPSessionManager *sManager = [AFHTTPSessionManager manager];
     [sManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [sManager GET:sUrlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NBADebugLog(@"reload GameId : %@", [_game gameId]);
         NSDictionary *sDic = (NSDictionary *)responseObject;
         NBAVOGame *sGame = [[NBAVOGame alloc] initWithData:sDic[@"basicGameData"]];
         NBAVOStat *sStat = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];
@@ -245,6 +242,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
             NBADebugLog(@"Error: %@", error);
             [self setupViewModelGame:nil stat:nil];
         } else {
+            NBADebugLog(@"reload GameId : %@", [_game gameId]);
             NSDictionary *sDic = (NSDictionary *)responseObject;
             NBAVOGame *sGame = [[NBAVOGame alloc] initWithData:sDic[@"basicGameData"]];
             NBAVOStat *sStat = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];

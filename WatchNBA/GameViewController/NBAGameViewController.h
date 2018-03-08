@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NBAVOGame.h"
-#import "NBAVOStat.h"
 
 @interface NBAGameViewController : UIViewController
 
 @property(nonatomic, assign, readonly) NSInteger index;
 
-- (instancetype)initWithGame:(NBAVOGame *)aGame index:(NSInteger)aIndex;
+- (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex;
 
 @end

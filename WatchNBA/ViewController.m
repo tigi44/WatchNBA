@@ -94,8 +94,7 @@
 - (NBAGameViewController *)viewControllerAtIndex:(NSUInteger)aIndex {
     if (_games && [_games count] > aIndex)
     {
-        NBAVOGame *sGame = [[NBAVOGame alloc] initWithData:_games[aIndex]];
-        return [[NBAGameViewController alloc] initWithGame:sGame index:aIndex];
+        return [[NBAGameViewController alloc] initWithGameData:_games[aIndex] index:aIndex];
     }
     else
     {
