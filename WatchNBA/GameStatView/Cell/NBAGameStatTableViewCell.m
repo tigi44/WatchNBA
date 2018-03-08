@@ -8,6 +8,7 @@
 
 #import "NBAGameStatTableViewCell.h"
 #import "NBAGameStatCollectionViewModel.h"
+#import "NBAApiUrl.h"
 
 @interface NBAGameStatTableViewCell() <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -22,7 +23,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)aStyle reuseIdentifier:(NSString *)aReuseIdentifier {
     self = [super initWithStyle:aStyle reuseIdentifier:aReuseIdentifier];
     if (self) {
-        [self setBackgroundColor:[UIColor blackColor]];
+        [self setBackgroundColor:COLOR_BACKGROUND];
         [self setupSubview];
         
         _leaders = [NSArray array];
@@ -44,7 +45,7 @@
     [sLayout setMinimumLineSpacing:0.0f];
     [sLayout setMinimumInteritemSpacing:0.0f];
     
-    [_collectionView setBackgroundColor:[UIColor darkGrayColor]];
+    [_collectionView setBackgroundColor:COLOR_BACKGROUND];
     [_collectionView setPagingEnabled:YES];
     [_collectionView registerClass:[NBAGameStatCollectionViewModel collectionViewCellClass] forCellWithReuseIdentifier:NSStringFromClass([NBAGameStatCollectionViewModel collectionViewCellClass])];
     [_collectionView setDataSource:self];

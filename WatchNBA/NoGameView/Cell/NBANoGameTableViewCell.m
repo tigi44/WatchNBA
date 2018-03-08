@@ -8,6 +8,7 @@
 
 #import "NBANoGameTableViewCell.h"
 #import "UIView+Layout.h"
+#import "NBAApiUrl.h"
 
 @interface NBANoGameTableViewCell()
 
@@ -20,7 +21,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)aStyle reuseIdentifier:(NSString *)aReuseIdentifier {
     self = [super initWithStyle:aStyle reuseIdentifier:aReuseIdentifier];
     if (self) {
-        [self setBackgroundColor:[UIColor darkGrayColor]];
+        [self setBackgroundColor:COLOR_BACKGROUND];
         [self setupSubview];
     }
     return self;
@@ -38,7 +39,7 @@
     _noGameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_noGameLabel setNumberOfLines:1];
     [_noGameLabel setFont:[UIFont boldSystemFontOfSize:24.0f]];
-    [_noGameLabel setTextColor:[UIColor whiteColor]];
+    [_noGameLabel setTextColor:COLOR_STATIC];
     [_noGameLabel setText:@"No Game"];
     [self addSubview:_noGameLabel];
 }

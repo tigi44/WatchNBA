@@ -26,7 +26,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, readwrite) UIRefreshControl *refreshControl;
 
-@property(nonatomic, weak)id<NBAGameTableViewReloadDelegate> delegate;
+@property(nonatomic, weak)id<NBAGameTableViewReloadDelegate> tableViewReloadDelegate;
 
 @end
 
@@ -65,7 +65,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
     [_tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     [[_tableView layer] setBorderWidth:0.f];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    [_tableView setSeparatorColor:[UIColor blackColor]];
+    [_tableView setSeparatorColor:COLOR_STATIC];
     
     // refresh control for the table view
     [self setRefreshControl:[[UIRefreshControl alloc] init]];
@@ -110,7 +110,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
     id<NBAGameTableViewModelProtocol> sViewModel = [_viewModels objectAtIndex:[aIndexPath row]];
     
     if ([sViewModel conformsToProtocol:@protocol(NBAGameTableViewReloadDelegate)]) {
-        [self setDelegate:(id<NBAGameTableViewReloadDelegate>)sViewModel];
+        [self setTableViewReloadDelegate:(id<NBAGameTableViewReloadDelegate>)sViewModel];
     }
     
     if ([sViewModel conformsToProtocol:@protocol(NBAGameTableViewModelProtocol)] &&
@@ -186,8 +186,8 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
 - (void)stopReloadTimer {
     if (_reloadTimer) {
-        if (_delegate) {
-            [_delegate reloadProgress:0];
+        if (_tableViewReloadDelegate) {
+            [_tableViewReloadDelegate reloadProgress:0];
         }
         [_reloadTimer invalidate];
         _reloadTimer = nil;
@@ -195,20 +195,20 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 }
 
 - (void)reloadCount {
-    if (_delegate) {
+    if (_tableViewReloadDelegate) {
         if (_reloadCurrentTime <= 0) {
             _reloadCurrentTime = _reloadTime;
         }
         
         _reloadCurrentTime -= gGameReloadTimeInterval;
         float sProgress = 1 - ((float)_reloadCurrentTime/_reloadTime);
-        [_delegate reloadProgress:sProgress];
+        [_tableViewReloadDelegate reloadProgress:sProgress];
         
         if (sProgress >= 1) {
             [self stopReloadTimer];
             [self reloadGameData];
             [self setupReloadTimer];
-            [_delegate reloadProgress:0];
+            [_tableViewReloadDelegate reloadProgress:0];
         }
     } else {
         [self stopReloadTimer];
@@ -217,7 +217,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
 - (void)reloadGameData {
     NSString *sUrlString = NBA_BOX_SCORE_API([_game startDateEastern], [_game gameId]);
-    NSLog(@"reload %@", [_game gameId]);
+    NBADebugLog(@"reload GameId : %@", [_game gameId]);
     AFHTTPSessionManager *sManager = [AFHTTPSessionManager manager];
     [sManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [sManager GET:sUrlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
@@ -226,7 +226,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
         NBAVOStat *sStat = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];
         [self setupViewModelGame:sGame stat:sStat];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        NBADebugLog(@"Error: %@", error);
         [self setupViewModelGame:nil stat:nil];
     }];
 }
@@ -242,7 +242,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
-            NSLog(@"Error: %@", error);
+            NBADebugLog(@"Error: %@", error);
             [self setupViewModelGame:nil stat:nil];
         } else {
             NSDictionary *sDic = (NSDictionary *)responseObject;

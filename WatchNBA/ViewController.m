@@ -57,8 +57,7 @@
         NSDictionary *sLinks = [sDic objectForKey:@"links"];
         aResolver(sLinks);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        
-        NSLog(@"Error: %@", error);
+        NBADebugLog(@"Error: %@", error);
     }];
 }
 
@@ -74,8 +73,7 @@
         
         aResolver(sGames);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-       
-        NSLog(@"Error: %@", error);
+        NBADebugLog(@"Error: %@", error);
     }];
 }
 
