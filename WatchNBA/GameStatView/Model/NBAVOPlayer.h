@@ -12,6 +12,6 @@
 
 @property(nonatomic, copy)NSString *personId;
 
-- (instancetype)initWithData:(NSDictionary *)aPersonData;
+- (instancetype)initWithData:(NSDictionary *)aData;
 
 @end

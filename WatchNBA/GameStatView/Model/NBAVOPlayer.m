@@ -19,10 +19,10 @@
 
 @implementation NBAVOPlayer
 
-- (instancetype)initWithData:(NSDictionary *)aPersonData {
+- (instancetype)initWithData:(NSDictionary *)aData {
     self = [super init];
     if (self) {
-        _personId = aPersonData[@"personId"];
+        _personId = aData[@"personId"];
         //[self playerBioByPlayerId];
     }
     return self;

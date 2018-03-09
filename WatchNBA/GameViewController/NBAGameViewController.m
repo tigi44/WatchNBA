@@ -38,7 +38,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 }
 
 - (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex {
-    self = [super init];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
         _game = [[NBAVOGame alloc] initWithData:aData];
         _index = aIndex;
@@ -46,7 +46,11 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
     return self;
 }
 
-- (instancetype)init {
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    return [self initWithGameData:nil index:0];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     return [self initWithGameData:nil index:0];
 }
 

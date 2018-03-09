@@ -48,14 +48,14 @@ static const float kLogoImageGap = 10.f;
     [_reloadProgressView setSize:CGSizeMake([self bounds].size.width, 10.f)];
     [_reloadProgressView setPosition:CGPointMake(0, [self bounds].size.height)];
     
+    [_vTeamLogoImageView setSize:kLogoImageSize];
     [_vTeamLogoImageView moveToVerticalCenter];
     [_vTeamLogoImageView setPosition:kLogoImagePoint];
-    [_vTeamLogoImageView setSize:kLogoImageSize];
     
+    [_hTeamLogoImageView setSize:kLogoImageSize];
     [_hTeamLogoImageView moveToVerticalCenter];
     [_hTeamLogoImageView moveToRightWithMargin:kLogoImagePoint.x];
     [_hTeamLogoImageView setYPosition:kLogoImagePoint.y];
-    [_hTeamLogoImageView setSize:kLogoImageSize];
     
     [_vTeamTriCodeLabel sizeToFit];
     [_vTeamTriCodeLabel setXPosition:kLogoImageSize.width/2 + kLogoImagePoint.x - [_vTeamTriCodeLabel frame].size.width/2];
@@ -92,59 +92,59 @@ static const float kLogoImageGap = 10.f;
     _reloadProgressView = [[UIProgressView alloc] initWithFrame:CGRectZero];
     [_reloadProgressView setTrackTintColor:COLOR_STATIC];
     [_reloadProgressView setTintColor:COLOR_CLOCK];
-    [self addSubview:_reloadProgressView];
+    [[self contentView] addSubview:_reloadProgressView];
     
     _vTeamLogoImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [_vTeamLogoImageView setContentMode:UIViewContentModeScaleAspectFill];
-    [self addSubview:_vTeamLogoImageView];
+    [[self contentView] addSubview:_vTeamLogoImageView];
     
     _hTeamLogoImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [_hTeamLogoImageView setContentMode:UIViewContentModeScaleAspectFill];
-    [self addSubview:_hTeamLogoImageView];
+    [[self contentView] addSubview:_hTeamLogoImageView];
     
     _vTeamTriCodeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_vTeamTriCodeLabel setNumberOfLines:1];
     [_vTeamTriCodeLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
     [_vTeamTriCodeLabel setTextColor:COLOR_STATIC];
-    [self addSubview:_vTeamTriCodeLabel];
+    [[self contentView] addSubview:_vTeamTriCodeLabel];
     
     _hTeamTriCodeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_hTeamTriCodeLabel setNumberOfLines:1];
     [_hTeamTriCodeLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
     [_hTeamTriCodeLabel setTextColor:COLOR_STATIC];
-    [self addSubview:_hTeamTriCodeLabel];
+    [[self contentView] addSubview:_hTeamTriCodeLabel];
     
     _vTeamScoreLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_vTeamScoreLabel setNumberOfLines:1];
     [_vTeamScoreLabel setFont:[UIFont boldSystemFontOfSize:24.0f]];
     [_vTeamScoreLabel setTextColor:COLOR_TEXT];
-    [self addSubview:_vTeamScoreLabel];
+    [[self contentView] addSubview:_vTeamScoreLabel];
     
     _hTeamScoreLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_hTeamScoreLabel setNumberOfLines:1];
     [_hTeamScoreLabel setFont:[UIFont boldSystemFontOfSize:24.0f]];
     [_hTeamScoreLabel setTextColor:COLOR_TEXT];
-    [self addSubview:_hTeamScoreLabel];
+    [[self contentView] addSubview:_hTeamScoreLabel];
     
     _gameTimeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_gameTimeLabel setNumberOfLines:2];
     [_gameTimeLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
     [_gameTimeLabel setTextColor:COLOR_STATIC];
     [_gameTimeLabel setTextAlignment:NSTextAlignmentCenter];
-    [self addSubview:_gameTimeLabel];
+    [[self contentView] addSubview:_gameTimeLabel];
     
     _gameClockLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_gameClockLabel setNumberOfLines:1];
     [_gameClockLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
     [_gameClockLabel setTextColor:COLOR_CLOCK];
     [_gameClockLabel setTextAlignment:NSTextAlignmentCenter];
-    [self addSubview:_gameClockLabel];
+    [[self contentView] addSubview:_gameClockLabel];
     
     _startDateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_startDateLabel setNumberOfLines:1];
     [_startDateLabel setFont:[UIFont boldSystemFontOfSize:24.0f]];
     [_startDateLabel setTextColor:COLOR_STATIC];
-    [self addSubview:_startDateLabel];
+    [[self contentView] addSubview:_startDateLabel];
     
 }
 

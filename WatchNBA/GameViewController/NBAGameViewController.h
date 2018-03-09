@@ -12,6 +12,6 @@
 
 @property(nonatomic, assign, readonly) NSInteger index;
 
-- (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex;
+- (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex NS_DESIGNATED_INITIALIZER;
 
 @end
