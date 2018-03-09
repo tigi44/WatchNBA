@@ -73,8 +73,8 @@ static const float kLogoImageGap = 10.f;
     [_hTeamScoreLabel moveToRightWithMargin:kLogoImageSize.width/2 + kLogoImagePoint.x - [_hTeamScoreLabel frame].size.width/2];
     [_hTeamScoreLabel moveToBottomOf:_hTeamTriCodeLabel gap:kLogoImageGap];
     
-    [_gameTimeLabel sizeToFit];
     [_gameTimeLabel setWidth:75.f];
+    [_gameTimeLabel sizeToFit];
     [_gameTimeLabel moveToHorizontalCenter];
     [_gameTimeLabel setYPosition:kLogoImagePoint.y + kLogoImageSize.height/2 - kLogoImageGap];
     

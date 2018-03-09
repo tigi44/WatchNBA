@@ -31,12 +31,18 @@
     
     [AnyPromise promiseWithResolverBlock:^(PMKResolver resolver) {
         [self setupTodayApiPromiseResolver:resolver];
-    }].then(^(id object) {
+    }].catch(^(NSError *error){
+        NBADebugLog(@"Error: %@", error);
+        NSString *todayScoreboardApiURLString = NBA_TODAY_UTC_SCOREBOARD_API_PATH;
+        return [AnyPromise promiseWithValue:[NSDictionary dictionaryWithObject:todayScoreboardApiURLString forKey:@"todayScoreboard"]];
+    }).then(^(id object) {
         NSString *todayScoreboardApiURLString = [object objectForKey:@"todayScoreboard"];
         todayScoreboardApiURLString = [NBA_DOMAIN stringByAppendingString:todayScoreboardApiURLString];
         return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolver) {
             [self setupGamesByURLString:todayScoreboardApiURLString promiseResolver:resolver];
         }];
+    }).catch(^(NSError *error){
+        NBADebugLog(@"Error: %@", error);
     }).ensure(^{
         [self setupPageViewController];
     });
@@ -57,7 +63,7 @@
         NSDictionary *sLinks = [sDic objectForKey:@"links"];
         aResolver(sLinks);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NBADebugLog(@"Error: %@", error);
+        aResolver(error);
     }];
 }
 
@@ -73,7 +79,7 @@
         
         aResolver(sGames);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NBADebugLog(@"Error: %@", error);
+        aResolver(error);
     }];
 }
 
@@ -98,7 +104,7 @@
     }
     else
     {
-        return [[NBAGameViewController alloc] init];
+        return [[NBAGameViewController alloc] initWithGameData:nil index:0];
     }
 }
 

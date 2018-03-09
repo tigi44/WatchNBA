@@ -39,7 +39,7 @@
     NBAGameStatTableViewCell *sTabelViewCell = [aTableView dequeueReusableCellWithIdentifier:NSStringFromClass([[self class] tableViewCellClass])];
     [sTabelViewCell setSeparatorInset:UIEdgeInsetsMake(0.f, sTabelViewCell.bounds.size.width, 0.f, 0.f)];
     [sTabelViewCell setupCollectionViewWithvTeamLeadersData:_vTeamLeaders hTeamLeaders:_hTeamLeaders];
-    [sTabelViewCell layoutIfNeeded];
+    [sTabelViewCell setNeedsLayout];
     
     return sTabelViewCell;
 }

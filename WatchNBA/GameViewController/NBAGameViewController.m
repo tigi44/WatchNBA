@@ -40,7 +40,9 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 - (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        _game = [[NBAVOGame alloc] initWithData:aData];
+        if (aData) {
+            _game = [[NBAVOGame alloc] initWithData:aData];
+        }
         _index = aIndex;
     }
     return self;

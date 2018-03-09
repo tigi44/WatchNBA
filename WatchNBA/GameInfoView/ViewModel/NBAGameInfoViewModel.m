@@ -114,7 +114,7 @@
     [[sTabelViewCell gameClockLabel] setText:_gameClock];
     [[sTabelViewCell startDateLabel] setText:_startDate];
     _reloadProgressView = [sTabelViewCell reloadProgressView];
-    [sTabelViewCell layoutIfNeeded];
+    [sTabelViewCell setNeedsLayout];
     
     return sTabelViewCell;
 }

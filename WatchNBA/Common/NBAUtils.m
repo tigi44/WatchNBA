@@ -10,7 +10,7 @@
 
 @implementation NBAUtils
 
-+ (NSString *)todayEsternDate {
++ (NSString *)todayDateEST {
     NSTimeZone *sTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"EST"];
     NSDateFormatter *sDateFormatter=[[NSDateFormatter alloc] init];
     [sDateFormatter setTimeZone:sTimeZone];
@@ -19,7 +19,16 @@
     return [sDateFormatter stringFromDate:[NSDate date]];
 }
 
-+ (NSString *)yesterdayEsternDate {
++ (NSString *)todayDateUTC {
+    NSTimeZone *sTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+    NSDateFormatter *sDateFormatter=[[NSDateFormatter alloc] init];
+    [sDateFormatter setTimeZone:sTimeZone];
+    [sDateFormatter setDateFormat:@"yyyyMMdd"];
+    
+    return [sDateFormatter stringFromDate:[NSDate date]];
+}
+
++ (NSString *)yesterdayDateEST {
     NSTimeZone *sTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"EST"];
     NSDateFormatter *sDateFormatter=[[NSDateFormatter alloc] init];
     [sDateFormatter setTimeZone:sTimeZone];

@@ -10,7 +10,8 @@
 
 @interface NBAUtils : NSObject
 
-+ (NSString *)todayEsternDate;
-+ (NSString *)yesterdayEsternDate;
++ (NSString *)todayDateEST;
++ (NSString *)todayDateUTC;
++ (NSString *)yesterdayDateEST;
 + (NSString *)convertToLocaleDateFromUTCDateString:(NSString *)aUTCDateString format:(NSString *)aFormat;
 @end

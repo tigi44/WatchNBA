@@ -31,8 +31,11 @@ static const NSInteger gNbaApiReloadTime = 10;
 
 #define NBA_TODAY_API @"https://data.nba.net/prod/v3/today.json"
 
-#define NBA_TODAY_EST_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils todayEsternDate]];
-#define NBA_YESTERDAY_EST_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils yesterdayEsternDate]];
+#define NBA_TODAY_EST_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils todayDateEST]];
+#define NBA_YESTERDAY_EST_SCOREBOARD_API [NSString stringWithFormat:@"https://data.nba.net/prod/v2/%@/scoreboard.json", [NBAUtils yesterdayDateEST]];
+
+#define NBA_TODAY_UTC_SCOREBOARD_API_PATH [NSString stringWithFormat:@"/prod/v2/%@/scoreboard.json", [NBAUtils todayDateUTC]];
+
 #define NBA_BOX_SCORE_API(aGameDate, aGameId) [NSString stringWithFormat:@"https://data.nba.net/prod/v1/%@/%@_boxscore.json", aGameDate, aGameId];
 #define NBA_PLAYER_BIO_API(aPlayerId) [NSString stringWithFormat:@"https://data.nba.net/json/bios/player_%@.json", aPlayerId];
 
