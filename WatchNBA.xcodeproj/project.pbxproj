@@ -36,8 +36,21 @@
 		0EA827582043F725005DEE22 /* NBANoGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA827572043F725005DEE22 /* NBANoGameTableViewCell.m */; };
 		0EA8275B2043F737005DEE22 /* NBANoGameViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8275A2043F737005DEE22 /* NBANoGameViewModel.m */; };
 		0EA8275E20450259005DEE22 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8275D20450259005DEE22 /* UIView+Layout.m */; };
+		0EEF5C2C20561E8900E7997D /* UIImageView+WebImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF5C2B20561E8800E7997D /* UIImageView+WebImageTests.m */; };
 		62F4D8B5F8799340F102A401 /* Pods_WatchNBA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */; };
+		CB3D6C30263BDCC3C1EBBA4D /* Pods_Watch_WatchNBA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290587C5298E71D6C4AD6CCC /* Pods_Watch_WatchNBA.framework */; };
+		D72F8086D8C9C3DAC415CE25 /* Pods_Watch_WatchNBATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF356D75930F03E7039C7D2 /* Pods_Watch_WatchNBATests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0EEF5C2620561DDB00E7997D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E8FEE17203BB3E900297CE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E8FEE1E203BB3E900297CE3;
+			remoteInfo = WatchNBA;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E090F5E2045251900D1FB5F /* NBAUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAUtils.h; sourceTree = "<group>"; };
@@ -98,9 +111,18 @@
 		0EA8275C20450259005DEE22 /* UIView+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		0EA8275D20450259005DEE22 /* UIView+Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		0EE66954204CDD1400361E12 /* NBAGameTableViewReloadDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameTableViewReloadDelegate.h; sourceTree = "<group>"; };
+		0EEF5C2120561DDB00E7997D /* WatchNBATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchNBATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EEF5C2520561DDB00E7997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EEF5C2B20561E8800E7997D /* UIImageView+WebImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImageTests.m"; sourceTree = "<group>"; };
+		290587C5298E71D6C4AD6CCC /* Pods_Watch_WatchNBA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_WatchNBA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31609D46B2CC6C0BB3532128 /* Pods-Watch-WatchNBA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch-WatchNBA.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch-WatchNBA/Pods-Watch-WatchNBA.release.xcconfig"; sourceTree = "<group>"; };
 		59C5F710A6ED0D7CB4963B11 /* Pods-WatchNBA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchNBA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA.debug.xcconfig"; sourceTree = "<group>"; };
+		7FF356D75930F03E7039C7D2 /* Pods_Watch_WatchNBATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_WatchNBATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchNBA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		921CFC8B1FC9E97E294F782C /* Pods-WatchNBA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchNBA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA.release.xcconfig"; sourceTree = "<group>"; };
+		A537E92A0AC15DFCFD20128B /* Pods-Watch-WatchNBA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch-WatchNBA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch-WatchNBA/Pods-Watch-WatchNBA.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1ADF7E16C743263C76628D /* Pods-Watch-WatchNBATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch-WatchNBATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch-WatchNBATests/Pods-Watch-WatchNBATests.release.xcconfig"; sourceTree = "<group>"; };
+		E4451E55766DC65913543B4D /* Pods-Watch-WatchNBATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch-WatchNBATests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch-WatchNBATests/Pods-Watch-WatchNBATests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +131,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				62F4D8B5F8799340F102A401 /* Pods_WatchNBA.framework in Frameworks */,
+				CB3D6C30263BDCC3C1EBBA4D /* Pods_Watch_WatchNBA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEF5C1E20561DDB00E7997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D72F8086D8C9C3DAC415CE25 /* Pods_Watch_WatchNBATests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8FEE21203BB3E900297CE3 /* WatchNBA */,
+				0EEF5C2220561DDB00E7997D /* WatchNBATests */,
 				0E8FEE20203BB3E900297CE3 /* Products */,
 				F6BD8EA793C07930DCC82BF5 /* Pods */,
 				400CCCE99FF3EE84A19F9C0B /* Frameworks */,
@@ -189,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */,
+				0EEF5C2120561DDB00E7997D /* WatchNBATests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,10 +374,21 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0EEF5C2220561DDB00E7997D /* WatchNBATests */ = {
+			isa = PBXGroup;
+			children = (
+				0EEF5C2B20561E8800E7997D /* UIImageView+WebImageTests.m */,
+				0EEF5C2520561DDB00E7997D /* Info.plist */,
+			);
+			path = WatchNBATests;
+			sourceTree = "<group>";
+		};
 		400CCCE99FF3EE84A19F9C0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */,
+				290587C5298E71D6C4AD6CCC /* Pods_Watch_WatchNBA.framework */,
+				7FF356D75930F03E7039C7D2 /* Pods_Watch_WatchNBATests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,6 +398,10 @@
 			children = (
 				59C5F710A6ED0D7CB4963B11 /* Pods-WatchNBA.debug.xcconfig */,
 				921CFC8B1FC9E97E294F782C /* Pods-WatchNBA.release.xcconfig */,
+				A537E92A0AC15DFCFD20128B /* Pods-Watch-WatchNBA.debug.xcconfig */,
+				31609D46B2CC6C0BB3532128 /* Pods-Watch-WatchNBA.release.xcconfig */,
+				E4451E55766DC65913543B4D /* Pods-Watch-WatchNBATests.debug.xcconfig */,
+				CE1ADF7E16C743263C76628D /* Pods-Watch-WatchNBATests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -381,6 +429,27 @@
 			productReference = 0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0EEF5C2020561DDB00E7997D /* WatchNBATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EEF5C2A20561DDB00E7997D /* Build configuration list for PBXNativeTarget "WatchNBATests" */;
+			buildPhases = (
+				0DC1B4DA08C9B1383BDCBFB7 /* [CP] Check Pods Manifest.lock */,
+				0EEF5C1D20561DDB00E7997D /* Sources */,
+				0EEF5C1E20561DDB00E7997D /* Frameworks */,
+				0EEF5C1F20561DDB00E7997D /* Resources */,
+				17482E6908198874CB302305 /* [CP] Embed Pods Frameworks */,
+				59E1CC18DB5B2C4F2DE16758 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0EEF5C2720561DDB00E7997D /* PBXTargetDependency */,
+			);
+			name = WatchNBATests;
+			productName = WatchNBATests;
+			productReference = 0EEF5C2120561DDB00E7997D /* WatchNBATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -393,6 +462,11 @@
 					0E8FEE1E203BB3E900297CE3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					0EEF5C2020561DDB00E7997D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0E8FEE1E203BB3E900297CE3;
 					};
 				};
 			};
@@ -410,6 +484,7 @@
 			projectRoot = "";
 			targets = (
 				0E8FEE1E203BB3E900297CE3 /* WatchNBA */,
+				0EEF5C2020561DDB00E7997D /* WatchNBATests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,9 +502,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EEF5C1F20561DDB00E7997D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DC1B4DA08C9B1383BDCBFB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Watch-WatchNBATests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0F4071551ADCF2A2F19B1194 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,11 +541,46 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WatchNBA-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Watch-WatchNBA-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17482E6908198874CB302305 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBATests/Pods-Watch-WatchNBATests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBATests/Pods-Watch-WatchNBATests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59E1CC18DB5B2C4F2DE16758 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBATests/Pods-Watch-WatchNBATests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88F0E3E6558FDEEF37D0DBBC /* [CP] Copy Pods Resources */ = {
@@ -460,7 +595,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBA/Pods-Watch-WatchNBA-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFD802B8F56A6A310664F5D7 /* [CP] Embed Pods Frameworks */ = {
@@ -469,7 +604,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBA/Pods-Watch-WatchNBA-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -482,7 +617,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchNBA/Pods-WatchNBA-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBA/Pods-Watch-WatchNBA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -519,7 +654,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EEF5C1D20561DDB00E7997D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEF5C2C20561E8900E7997D /* UIImageView+WebImageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0EEF5C2720561DDB00E7997D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E8FEE1E203BB3E900297CE3 /* WatchNBA */;
+			targetProxy = 0EEF5C2620561DDB00E7997D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E8FEE28203BB3E900297CE3 /* Main.storyboard */ = {
@@ -647,7 +798,7 @@
 		};
 		0E8FEE36203BB3E900297CE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59C5F710A6ED0D7CB4963B11 /* Pods-WatchNBA.debug.xcconfig */;
+			baseConfigurationReference = A537E92A0AC15DFCFD20128B /* Pods-Watch-WatchNBA.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -662,7 +813,7 @@
 		};
 		0E8FEE37203BB3E900297CE3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 921CFC8B1FC9E97E294F782C /* Pods-WatchNBA.release.xcconfig */;
+			baseConfigurationReference = 31609D46B2CC6C0BB3532128 /* Pods-Watch-WatchNBA.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -672,6 +823,36 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigi.WatchNBA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0EEF5C2820561DDB00E7997D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4451E55766DC65913543B4D /* Pods-Watch-WatchNBATests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WatchNBATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigi.WatchNBATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchNBA.app/WatchNBA";
+			};
+			name = Debug;
+		};
+		0EEF5C2920561DDB00E7997D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1ADF7E16C743263C76628D /* Pods-Watch-WatchNBATests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WatchNBATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigi.WatchNBATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchNBA.app/WatchNBA";
 			};
 			name = Release;
 		};
@@ -692,6 +873,15 @@
 			buildConfigurations = (
 				0E8FEE36203BB3E900297CE3 /* Debug */,
 				0E8FEE37203BB3E900297CE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EEF5C2A20561DDB00E7997D /* Build configuration list for PBXNativeTarget "WatchNBATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EEF5C2820561DDB00E7997D /* Debug */,
+				0EEF5C2920561DDB00E7997D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

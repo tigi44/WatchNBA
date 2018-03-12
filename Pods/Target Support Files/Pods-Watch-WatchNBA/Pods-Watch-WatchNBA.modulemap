@@ -1,0 +1,6 @@
+framework module Pods_Watch_WatchNBA {
+  umbrella header "Pods-Watch-WatchNBA-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_WatchNBAVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_WatchNBAVersionString[];
+FOUNDATION_EXPORT double Pods_Watch_WatchNBAVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Watch_WatchNBAVersionString[];
 
