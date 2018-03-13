@@ -166,6 +166,16 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
     [_tableView reloadData];
 }
 
+- (void)stopReloadTimer {
+    if (_reloadTimer) {
+        if (_tableViewReloadDelegate) {
+            [_tableViewReloadDelegate reloadProgress:0];
+        }
+        [_reloadTimer invalidate];
+        _reloadTimer = nil;
+    }
+}
+
 - (void)setupReloadTimer {
     _reloadCurrentTime = 0;
     if (_game) {
@@ -184,16 +194,6 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
         }
     } else {
         [self stopReloadTimer];
-    }
-}
-
-- (void)stopReloadTimer {
-    if (_reloadTimer) {
-        if (_tableViewReloadDelegate) {
-            [_tableViewReloadDelegate reloadProgress:0];
-        }
-        [_reloadTimer invalidate];
-        _reloadTimer = nil;
     }
 }
 

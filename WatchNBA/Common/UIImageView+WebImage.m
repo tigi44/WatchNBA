@@ -57,7 +57,7 @@ NSString *const WebImageErrorDomain = @"WebImageErrorDomain";
                  loadFailImage:(nullable UIImage *)aLoadFailImage
                         option:(WebImageOption)aOption
                      completed:(nullable WebImageCompletionBlock)aCompledBlock {
-    NSAssert(aOption == WebImageOptionSDWebImage, @"must be WebImageOptionAFNetworking");
+    NSAssert(aOption == WebImageOptionAFNetworking, @"must be WebImageOptionAFNetworking");
     
     [self afNetworking_setImageWithURLRequest:aAFNetworkingURLRequest placeholderImage:aPlaceholderImage loadFailImage:aLoadFailImage completed:aCompledBlock];
 }
@@ -105,7 +105,7 @@ NSString *const WebImageErrorDomain = @"WebImageErrorDomain";
     } else {
         if (aCompledBlock) {
             NSError *sError = [NSError errorWithDomain:WebImageErrorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey : @"Trying to load a nil url"}];
-            aCompledBlock(aURL, nil, sError);
+            aCompledBlock(nil, nil, sError);
         }
     }
 }
@@ -127,7 +127,7 @@ NSString *const WebImageErrorDomain = @"WebImageErrorDomain";
                   sdWebImageOption:(SDWebImageOptions)aSDWebImageOption
                           progress:(nullable SDWebImageDownloaderProgressBlock)aProgressBlock
                          completed:(nullable WebImageCompletionBlock)aCompledBlock {
-     __weak __typeof(self)weakSelf = self;
+    __weak __typeof(self)weakSelf = self;
     
     [self sd_setImageWithURL:aURL
             placeholderImage:aPlaceholderImage
@@ -181,10 +181,10 @@ NSString *const WebImageErrorDomain = @"WebImageErrorDomain";
                              }
     }];
     
-    if ([aURLRequest URL] == nil) {
+    if (!aURLRequest.URL) {
         if (aCompledBlock) {
             NSError *sError = [NSError errorWithDomain:WebImageErrorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey : @"Trying to load a nil url"}];
-            aCompledBlock(aURLRequest.URL, nil, sError);
+            aCompledBlock(nil, nil, sError);
         }
     }
 }

@@ -58,23 +58,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
 
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNil(aUrl, @"aUrl has to be nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_placeholerImage], @"the imageView must be set to the placeholderImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is nil, the result must be error result");
-         }
-         [expectation fulfill];
-    }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNil(aUrl, @"aUrl has to be nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_placeholerImage], @"the imageView must be set to the placeholderImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is nil, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
 
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -100,23 +99,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is empty, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is empty, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -142,23 +140,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is a incorrect string, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is a incorrect string, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -184,23 +181,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTFail(@"if the imageUrl is a correct string, the result must be success");
-         } else {
-             // success
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNotNil(aImage, @"aImage has to be not nil");
-             XCTAssertTrue([[weakImageView image] isEqual:aImage], @"the imageView must be set to aImage");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTFail(@"if the imageUrl is a correct string, the result must be success");
+                                   } else {
+                                       // success
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNotNil(aImage, @"aImage has to be not nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:aImage], @"the imageView must be set to aImage");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -228,23 +224,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNil(aUrl, @"aUrl has to be nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_placeholerImage], @"the imageView must be set to the placeholderImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is nil, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNil(aUrl, @"aUrl has to be nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_placeholerImage], @"the imageView must be set to the placeholderImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is nil, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -270,23 +265,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is empty, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is empty, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -312,23 +306,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is a incorrect string, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is a incorrect string, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -354,23 +347,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTFail(@"if the imageUrl is a correct string, the result must be success");
-         } else {
-             // success
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNotNil(aImage, @"aImage has to be not nil");
-             XCTAssertTrue([[weakImageView image] isEqual:aImage], @"the imageView must be set to aImage");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTFail(@"if the imageUrl is a correct string, the result must be success");
+                                   } else {
+                                       // success
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNotNil(aImage, @"aImage has to be not nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:aImage], @"the imageView must be set to aImage");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -398,23 +390,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNil(aUrl, @"aUrl has to be nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_placeholerImage], @"the imageView must be set to the placeholderImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is nil, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNil(aUrl, @"aUrl has to be nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_placeholerImage], @"the imageView must be set to the placeholderImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is nil, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -440,23 +431,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is empty, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is empty, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -482,23 +472,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNil(aImage, @"aImage has to be nil");
-             XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
-         } else {
-             // success
-             XCTFail(@"if the imageUrl is a incorrect string, the result must be error result");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNil(aImage, @"aImage has to be nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:_loadFailImage], @"the imageView must be set to the loadFailImage");
+                                   } else {
+                                       // success
+                                       XCTFail(@"if the imageUrl is a incorrect string, the result must be error result");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);
@@ -524,23 +513,22 @@ static const NSTimeInterval kTestBlockTimeout = 2;
     [_testImageView setImage:nil];
     
     __weak UIImageView *weakImageView = _testImageView;
-    [weakImageView
-     setImageWithURLString:sImageURLString
-     placeholderImage:_placeholerImage
-     loadFailImage:_loadFailImage
-     option:sWebImageOption
-     completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
-         if (aError) {
-             // fail
-             XCTFail(@"if the imageUrl is a correct string, the result must be success");
-         } else {
-             // success
-             XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
-             XCTAssertNotNil(aImage, @"aImage has to be not nil");
-             XCTAssertTrue([[weakImageView image] isEqual:aImage], @"the imageView must be set to aImage");
-         }
-         [expectation fulfill];
-     }];
+    [weakImageView setImageWithURLString:sImageURLString
+                        placeholderImage:_placeholerImage
+                           loadFailImage:_loadFailImage
+                                  option:sWebImageOption
+                               completed:^(NSURL *aUrl, UIImage *aImage, NSError *aError) {
+                                   if (aError) {
+                                       // fail
+                                       XCTFail(@"if the imageUrl is a correct string, the result must be success");
+                                   } else {
+                                       // success
+                                       XCTAssertNotNil(aUrl, @"aUrl has to be not nil");
+                                       XCTAssertNotNil(aImage, @"aImage has to be not nil");
+                                       XCTAssertTrue([[weakImageView image] isEqual:aImage], @"the imageView must be set to aImage");
+                                   }
+                                   [expectation fulfill];
+                               }];
     
     [self waitForExpectationsWithTimeout:kTestBlockTimeout handler:^(NSError *aError) {
         XCTAssertNil(aError, @"Timeout Error : %@", aError);

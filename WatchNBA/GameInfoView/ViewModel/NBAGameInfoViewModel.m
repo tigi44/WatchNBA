@@ -126,7 +126,7 @@
 #pragma mark - Implementation NBAGameTableViewReloadDelegate
 
 - (void)reloadProgress:(float)aProgress{
-    NBADebugLog(@"reload GameId : %@ - %f", _gameId, aProgress);
+//    NBADebugLog(@"reload GameId : %@ - %f", _gameId, aProgress);
     [_reloadProgressView setProgress:aProgress];
 }
 
