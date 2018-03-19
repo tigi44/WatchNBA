@@ -23,9 +23,9 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.2.1):
     - PromiseKit/CorePromise
-  - SDWebImage (4.3.2):
-    - SDWebImage/Core (= 4.3.2)
-  - SDWebImage/Core (4.3.2)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -36,8 +36,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   PromiseKit: edaca6f0a7ed73b08c287600537d13867a7fabc7
-  SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 5616d8f1e09e83f82c72d8879a9706a3bb6e8a27
+PODFILE CHECKSUM: 1a640c6f61148a2405040527d4d6e92d299a5252
 
 COCOAPODS: 1.4.0

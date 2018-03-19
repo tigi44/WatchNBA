@@ -19,6 +19,7 @@
 		0E090F8120464F8300D1FB5F /* NBAVOPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */; };
 		0E090F882046765F00D1FB5F /* NBAGameStatCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */; };
 		0E1EC2552050F7BA001B801F /* NBAVOPlayerBio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */; };
+		0E3EA1DF205F8CFB005E50EA /* PromiseKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EA1DE205F8CFB005E50EA /* PromiseKitTests.m */; };
 		0E8FEE24203BB3E900297CE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE23203BB3E900297CE3 /* AppDelegate.m */; };
 		0E8FEE27203BB3E900297CE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE26203BB3E900297CE3 /* ViewController.m */; };
 		0E8FEE2A203BB3E900297CE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FEE28203BB3E900297CE3 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		0E090F89204676A600D1FB5F /* NBAGameStatCollectionViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewModelProtocol.h; sourceTree = "<group>"; };
 		0E1EC2532050F7BA001B801F /* NBAVOPlayerBio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOPlayerBio.h; sourceTree = "<group>"; };
 		0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOPlayerBio.m; sourceTree = "<group>"; };
+		0E3EA1DE205F8CFB005E50EA /* PromiseKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromiseKitTests.m; sourceTree = "<group>"; };
 		0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8FEE22203BB3E900297CE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E8FEE23203BB3E900297CE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 		0EEF5C2220561DDB00E7997D /* WatchNBATests */ = {
 			isa = PBXGroup;
 			children = (
+				0E3EA1DE205F8CFB005E50EA /* PromiseKitTests.m */,
 				0EEF5C2B20561E8800E7997D /* UIImageView+WebImageTests.m */,
 				0EEF5C2520561DDB00E7997D /* Info.plist */,
 			);
@@ -556,11 +559,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Watch-WatchNBATests/Pods-Watch-WatchNBATests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3EA1DF205F8CFB005E50EA /* PromiseKitTests.m in Sources */,
 				0EEF5C2C20561E8900E7997D /* UIImageView+WebImageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
