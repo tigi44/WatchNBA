@@ -27,6 +27,7 @@
     NSString *_gameClock;
     
     NSString *_startDate;
+    NSString *_startDateEastern;
     
     UIProgressView *_reloadProgressView;
     
@@ -37,22 +38,23 @@
 - (instancetype)initWithGame:(NBAVOGame *)aGame {
     self = [super init];
     if (self) {
-        _isGameEnded = [aGame isGameEnded];
-        _isGameActivated = [aGame isGameActivated];
+        _isGameEnded        = [aGame isGameEnded];
+        _isGameActivated    = [aGame isGameActivated];
         
-        _gameId = [aGame gameId];
-        _startDate = [NBAUtils convertToLocaleDateFromUTCDateString:[aGame startTimeUTC] format:@"yyyy/MM/dd"];
-        _gameTime = [NBAUtils convertToLocaleDateFromUTCDateString:[aGame startTimeUTC] format:@"HH:mm"];
-        _gameClock = [aGame clock];
+        _gameId             = [aGame gameId];
+        _startDateEastern   = [aGame startDateEastern];
+        _startDate          = [NBAUtils convertToLocaleDateFromUTCDateString:[aGame startTimeUTC] format:@"yyyy/MM/dd"];
+        _gameTime           = [NBAUtils convertToLocaleDateFromUTCDateString:[aGame startTimeUTC] format:@"HH:mm"];
+        _gameClock          = [aGame clock];
         
-        _vTeamTriCode = [[aGame vTeam] triCode];
-        _hTeamTriCode = [[aGame hTeam] triCode];
+        _vTeamTriCode       = [[aGame vTeam] triCode];
+        _hTeamTriCode       = [[aGame hTeam] triCode];
         
-        _vTeamScore = [[aGame vTeam] score];
-        _hTeamScore = [[aGame hTeam] score];
+        _vTeamScore         = [[aGame vTeam] score];
+        _hTeamScore         = [[aGame hTeam] score];
         
-        _vTeamLogoImageUrl = NBA_TEAM_LOGO_IMG_URL(_vTeamTriCode);
-        _hTeamLogoImageUrl = NBA_TEAM_LOGO_IMG_URL(_hTeamTriCode);
+        _vTeamLogoImageUrl  = NBA_TEAM_LOGO_IMG_URL(_vTeamTriCode);
+        _hTeamLogoImageUrl  = NBA_TEAM_LOGO_IMG_URL(_hTeamTriCode);
         
         if ([aGame isGameEnded]) {
             _gameTime = @"END of GAME";
@@ -100,6 +102,7 @@
                                                     } else {
                                                     }
                                                 }];
+    
     [[sTabelViewCell hTeamLogoImageView] setImageWithURLString:_hTeamLogoImageUrl
                                          placeholderImage:[UIImage imageNamed:@"nba_logo.png"]
                                             loadFailImage:[UIImage imageNamed:@"default_player.png"]
@@ -113,6 +116,9 @@
     [[sTabelViewCell gameTimeLabel] setText:_gameTime];
     [[sTabelViewCell gameClockLabel] setText:_gameClock];
     [[sTabelViewCell startDateLabel] setText:_startDate];
+    
+    [[sTabelViewCell moveNbaSiteButton] addTarget:self action:@selector(moveToNbaSite) forControlEvents:UIControlEventTouchUpInside];
+    
     _reloadProgressView = [sTabelViewCell reloadProgressView];
     [sTabelViewCell setNeedsLayout];
     
@@ -128,6 +134,14 @@
 - (void)reloadProgress:(float)aProgress{
 //    NBADebugLog(@"reload GameId : %@ - %f", _gameId, aProgress);
     [_reloadProgressView setProgress:aProgress];
+}
+
+#pragma mark - UIButton Target
+
+- (void)moveToNbaSite
+{
+    NSString *sURLString = [NSString stringWithFormat:NBA_GAME_SITE_URL, _startDateEastern, _vTeamTriCode, _hTeamTriCode];
+    [self.presentSafariDelegate presentSafariViewControllerWithURL:[NSURL URLWithString:sURLString]];
 }
 
 @end

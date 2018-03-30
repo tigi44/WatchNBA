@@ -13,28 +13,30 @@
 #import <AFNetworking/AFNetworking.h>
 #import "NBAApiUrl.h"
 #import "NBAGameTableViewReloadDelegate.h"
+#import "NBAGameTableViewPresentSafariDelegate.h"
+#import <SafariServices/SafariServices.h>
 
-const static NSTimeInterval gGameReloadTimeInterval = 0.05;
-const static NSInteger gBefoeGameTimeIntervalWeight = 6;
+const static NSTimeInterval     gGameReloadTimeInterval = 0.05;
+const static NSInteger          gBefoeGameTimeIntervalWeight = 6;
 
-@interface NBAGameViewController() <UITableViewDelegate, UITableViewDataSource>
+@interface NBAGameViewController() <UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate, NBAGameTableViewPresentSafariDelegate>
 
-@property(nonatomic, copy) NBAVOGame *game;
-@property(nonatomic, copy) NBAVOStat *stat;
-@property(nonatomic, readwrite) NSInteger index;
+@property (nonatomic, copy)         NBAVOGame *game;
+@property (nonatomic, copy)         NBAVOStat *stat;
+@property (nonatomic, readwrite)    NSInteger index;
 
-@property(nonatomic, strong) UITableView *tableView;
-@property(nonatomic, readwrite) UIRefreshControl *refreshControl;
+@property (nonatomic, strong)       UITableView *tableView;
+@property (nonatomic, readwrite)    UIRefreshControl *refreshControl;
 
-@property(nonatomic, weak)id<NBAGameTableViewReloadDelegate> tableViewReloadDelegate;
+@property (nonatomic, weak)         id<NBAGameTableViewReloadDelegate> tableViewReloadDelegate;
 
 @end
 
 @implementation NBAGameViewController {
-    NSArray<id<NBAGameTableViewModelProtocol>> *_viewModels;
-    NSTimer *_reloadTimer;
-    float _reloadTime;
-    float _reloadCurrentTime;
+    NSArray<id<NBAGameTableViewModelProtocol>>  *_viewModels;
+    NSTimer                                     *_reloadTimer;
+    float                                       _reloadTime;
+    float                                       _reloadCurrentTime;
 }
 
 - (instancetype)initWithGameData:(NSDictionary *)aData index:(NSInteger)aIndex {
@@ -114,6 +116,10 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
     id<NBAGameTableViewModelProtocol> sViewModel = [_viewModels objectAtIndex:[aIndexPath row]];
     
+    if ([sViewModel isKindOfClass:[NBAGameInfoViewModel class]]) {
+        [(NBAGameInfoViewModel *)sViewModel setPresentSafariDelegate:self];
+    }
+    
     if ([sViewModel conformsToProtocol:@protocol(NBAGameTableViewReloadDelegate)]) {
         [self setTableViewReloadDelegate:(id<NBAGameTableViewReloadDelegate>)sViewModel];
     }
@@ -186,7 +192,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
                 if ([_game isGameActivated]) {
                     _reloadTime = gNbaApiReloadTime;
                 } else {
-                    _reloadTime = gNbaApiReloadTime;
+                    _reloadTime  = gNbaApiReloadTime;
                     _reloadTime *= gBefoeGameTimeIntervalWeight;
                 }
                 _reloadTimer = [NSTimer scheduledTimerWithTimeInterval:gGameReloadTimeInterval target:self selector:@selector(reloadCount) userInfo:nil repeats:YES];
@@ -204,7 +210,7 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
         }
         
         _reloadCurrentTime -= gGameReloadTimeInterval;
-        float sProgress = 1 - ((float)_reloadCurrentTime/_reloadTime);
+        float sProgress     = 1 - ((float)_reloadCurrentTime/_reloadTime);
         [_tableViewReloadDelegate reloadProgress:sProgress];
         
         if (sProgress >= 1) {
@@ -219,44 +225,63 @@ const static NSInteger gBefoeGameTimeIntervalWeight = 6;
 }
 
 - (void)reloadGameData {
-    NSString *sUrlString = NBA_BOX_SCORE_API([_game startDateEastern], [_game gameId]);
-    AFHTTPSessionManager *sManager = [AFHTTPSessionManager manager];
+    NSString *sUrlString            = NBA_BOX_SCORE_API([_game startDateEastern], [_game gameId]);
+    AFHTTPSessionManager *sManager  = [AFHTTPSessionManager manager];
+    
     [sManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [sManager GET:sUrlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NBADebugLog(@"reload GameId : %@", [_game gameId]);
-        NSDictionary *sDic = (NSDictionary *)responseObject;
-        NBAVOGame *sGame = [[NBAVOGame alloc] initWithData:sDic[@"basicGameData"]];
-        NBAVOStat *sStat = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];
+        NSDictionary *sDic  = (NSDictionary *)responseObject;
+        NBAVOGame *sGame    = [[NBAVOGame alloc] initWithData:sDic[@"basicGameData"]];
+        NBAVOStat *sStat    = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];
+        
         [self setupViewModelGame:sGame stat:sStat];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NBADebugLog(@"Error: %@", error);
+        
         [self setupViewModelGame:nil stat:nil];
     }];
 }
 
 - (void)reloadGameData_ex {
-    NSString *sUrlString = NBA_BOX_SCORE_API([_game startDateEastern], [_game gameId]);
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:sUrlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:0];
+    NSString *sUrlString                        = NBA_BOX_SCORE_API([_game startDateEastern], [_game gameId]);
+    NSURLSessionConfiguration *configuration    = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager                = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    NSURL *URL                                  = [NSURL URLWithString:sUrlString];
+    NSURLRequest *request                       = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:0];
 
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NBADebugLog(@"Error: %@", error);
+            
             [self setupViewModelGame:nil stat:nil];
         } else {
             NBADebugLog(@"reload GameId : %@", [_game gameId]);
-            NSDictionary *sDic = (NSDictionary *)responseObject;
-            NBAVOGame *sGame = [[NBAVOGame alloc] initWithData:sDic[@"basicGameData"]];
-            NBAVOStat *sStat = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];
+            NSDictionary *sDic  = (NSDictionary *)responseObject;
+            NBAVOGame *sGame    = [[NBAVOGame alloc] initWithData:sDic[@"basicGameData"]];
+            NBAVOStat *sStat    = [[NBAVOStat alloc] initWithData:sDic[@"stats"]];
+            
             [self setupViewModelGame:sGame stat:sStat];
         }
     }];
     
     [dataTask resume];
 }
+
+
+#pragma mark - Implementation NBAGameTableViewPresentSafariViewControllerDelegate
+
+- (void)presentSafariViewControllerWithURL:(NSURL *)aURL
+{
+    SFSafariViewController *sSafariViewController   = [[SFSafariViewController alloc] initWithURL:aURL];
+    sSafariViewController.dismissButtonStyle        = SFSafariViewControllerDismissButtonStyleClose;
+    sSafariViewController.preferredBarTintColor     = [UIColor blackColor];
+    sSafariViewController.delegate                  = self;
+    
+    [self presentViewController:sSafariViewController animated:NO completion:nil];
+}
+
+#pragma mark - Implementation SFSafariViewControllerDelegate
+
 
 @end
