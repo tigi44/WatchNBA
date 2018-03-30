@@ -12,16 +12,16 @@
 
 @interface NBAVOGame : NSObject
 
-@property(nonatomic, copy)NSString *gameId;
-@property(nonatomic, assign, getter=isGameActivated)BOOL gameActivated;
-@property(nonatomic, copy)NSString *startTimeEastern;
-@property(nonatomic, copy)NSString *startTimeUTC;
-@property(nonatomic, copy)NSString *endTimeUTC;
-@property(nonatomic, copy)NSString *startDateEastern;
-@property(nonatomic, copy)NSString *clock;
-@property(nonatomic, strong)NBAVOPeriod *period;
-@property(nonatomic, strong)NBAVOTeam *vTeam;
-@property(nonatomic, strong)NBAVOTeam *hTeam;
+@property(nonatomic, copy)                              NSString    *gameId;
+@property(nonatomic, assign, getter=isGameActivated)    BOOL        gameActivated;
+@property(nonatomic, copy)                              NSString    *startTimeEastern;
+@property(nonatomic, copy)                              NSString    *startTimeUTC;
+@property(nonatomic, copy)                              NSString    *endTimeUTC;
+@property(nonatomic, copy)                              NSString    *startDateEastern;
+@property(nonatomic, copy)                              NSString    *clock;
+@property(nonatomic, strong)                            NBAVOPeriod *period;
+@property(nonatomic, strong)                            NBAVOTeam   *vTeam;
+@property(nonatomic, strong)                            NBAVOTeam   *hTeam;
 
 - (instancetype)initWithData:(NSDictionary *)aGamedata;
 

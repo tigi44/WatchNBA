@@ -11,23 +11,25 @@
 #import "NBAApiUrl.h"
 
 static const CGPoint kLogoImagePoint = {20.f, 100.f};
-static const CGSize kLogoImageSize = {100.f, 100.f};
-static const float kLogoImageGap = 10.f;
+static const CGSize  kLogoImageSize  = {100.f, 100.f};
+static const float   kLogoImageGap   = 10.f;
 
 @interface NBAGameInfoTableViewCell()
 
-@property(nonatomic, readwrite)UIProgressView *reloadProgressView;
-@property(nonatomic, readwrite) UIImageView *vTeamLogoImageView;
-@property(nonatomic, readwrite) UIImageView *hTeamLogoImageView;
-@property(nonatomic, readwrite) UILabel *vTeamTriCodeLabel;
-@property(nonatomic, readwrite) UILabel *hTeamTriCodeLabel;
-@property(nonatomic, readwrite) UILabel *vTeamScoreLabel;
-@property(nonatomic, readwrite) UILabel *hTeamScoreLabel;
+@property(nonatomic, readwrite) UIProgressView  *reloadProgressView;
+@property(nonatomic, readwrite) UIImageView     *vTeamLogoImageView;
+@property(nonatomic, readwrite) UIImageView     *hTeamLogoImageView;
+@property(nonatomic, readwrite) UILabel         *vTeamTriCodeLabel;
+@property(nonatomic, readwrite) UILabel         *hTeamTriCodeLabel;
+@property(nonatomic, readwrite) UILabel         *vTeamScoreLabel;
+@property(nonatomic, readwrite) UILabel         *hTeamScoreLabel;
 
-@property(nonatomic, readwrite) UILabel *gameTimeLabel;
-@property(nonatomic, readwrite) UILabel *gameClockLabel;
+@property(nonatomic, readwrite) UILabel         *gameTimeLabel;
+@property(nonatomic, readwrite) UILabel         *gameClockLabel;
 
-@property(nonatomic, readwrite) UILabel *startDateLabel;
+@property(nonatomic, readwrite) UILabel         *startDateLabel;
+
+@property(nonatomic, readwrite) UIButton        *moveNbaSiteButton;
 
 @end
 
@@ -85,6 +87,10 @@ static const float kLogoImageGap = 10.f;
     [_startDateLabel sizeToFit];
     [_startDateLabel moveToHorizontalCenter];
     [_startDateLabel setYPosition:kLogoImagePoint.y/2];
+    
+    [_moveNbaSiteButton sizeToFit];
+    [_moveNbaSiteButton moveToHorizontalCenter];
+    [_moveNbaSiteButton moveToBottomWithMargin:kLogoImageGap];
     
 }
 
@@ -146,22 +152,25 @@ static const float kLogoImageGap = 10.f;
     [_startDateLabel setTextColor:COLOR_STATIC];
     [[self contentView] addSubview:_startDateLabel];
     
+    _moveNbaSiteButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_moveNbaSiteButton setBackgroundImage:[UIImage imageNamed:@"default_es.jpg"] forState:UIControlStateNormal];
+    [[self contentView] addSubview:_moveNbaSiteButton];
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    [_reloadProgressView setProgress:0];
-    [_vTeamLogoImageView setImage:nil];
-    [_hTeamLogoImageView setImage:nil];
-    [_vTeamTriCodeLabel setText:@""];
-    [_hTeamTriCodeLabel setText:@""];
-    [_vTeamScoreLabel setText:@""];
-    [_hTeamScoreLabel setText:@""];
+    [_reloadProgressView    setProgress:0];
+    [_vTeamLogoImageView    setImage:nil];
+    [_hTeamLogoImageView    setImage:nil];
+    [_vTeamTriCodeLabel     setText:@""];
+    [_hTeamTriCodeLabel     setText:@""];
+    [_vTeamScoreLabel       setText:@""];
+    [_hTeamScoreLabel       setText:@""];
     
-    [_gameTimeLabel setText:@""];
-    [_gameClockLabel setText:@""];
+    [_gameTimeLabel         setText:@""];
+    [_gameClockLabel        setText:@""];
     
-    [_startDateLabel setText:@""];
+    [_startDateLabel        setText:@""];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

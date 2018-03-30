@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "NBAGameTableViewModelProtocol.h"
 #import "NBAGameTableViewReloadDelegate.h"
+#import "NBAGameTableViewPresentSafariDelegate.h"
 #import "NBAVOGame.h"
 
 @interface NBAGameInfoViewModel : NSObject <NBAGameTableViewModelProtocol, NBAGameTableViewReloadDelegate>
+
+@property (nonatomic, weak) id<NBAGameTableViewPresentSafariDelegate> presentSafariDelegate;
 
 - (instancetype)initWithGame:(NBAVOGame *)aGame;
 

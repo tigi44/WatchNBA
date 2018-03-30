@@ -43,4 +43,6 @@ static const NSInteger gNbaApiReloadTime = 10;
 #define NBA_PLAYER_MULTI_IMG_URL @"https://neulionms-a.akamaihd.net/nba/player/v1/nba/site_4/images/multipleplayer.png";
 #define NBA_PLAYER_IMG_URL(aPlayerId) (aPlayerId) ? [NSString stringWithFormat:@"https://neulionmdnyc-a.akamaihd.net/nba/media/img/players/head/132x132/%@.png", aPlayerId] : NBA_PLAYER_MULTI_IMG_URL;
 
+#define NBA_GAME_SITE_URL @"https://watch.nba.com/game/%@/%@%@"
+
 #endif /* NBAApiUrl_h */

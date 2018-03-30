@@ -19,6 +19,8 @@
 		0E090F8120464F8300D1FB5F /* NBAVOPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F8020464F8300D1FB5F /* NBAVOPlayer.m */; };
 		0E090F882046765F00D1FB5F /* NBAGameStatCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E090F872046765F00D1FB5F /* NBAGameStatCollectionViewModel.m */; };
 		0E1EC2552050F7BA001B801F /* NBAVOPlayerBio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */; };
+		0E30814A206B694000ECA023 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E308149206B694000ECA023 /* SafariServices.framework */; };
+		0E308156206D127300ECA023 /* default_es.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E308155206D127200ECA023 /* default_es.jpg */; };
 		0E3EA1DF205F8CFB005E50EA /* PromiseKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EA1DE205F8CFB005E50EA /* PromiseKitTests.m */; };
 		0E8FEE24203BB3E900297CE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE23203BB3E900297CE3 /* AppDelegate.m */; };
 		0E8FEE27203BB3E900297CE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FEE26203BB3E900297CE3 /* ViewController.m */; };
@@ -79,6 +81,9 @@
 		0E090F89204676A600D1FB5F /* NBAGameStatCollectionViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameStatCollectionViewModelProtocol.h; sourceTree = "<group>"; };
 		0E1EC2532050F7BA001B801F /* NBAVOPlayerBio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAVOPlayerBio.h; sourceTree = "<group>"; };
 		0E1EC2542050F7BA001B801F /* NBAVOPlayerBio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAVOPlayerBio.m; sourceTree = "<group>"; };
+		0E308149206B694000ECA023 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		0E308151206B70C000ECA023 /* NBAGameTableViewPresentSafariDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAGameTableViewPresentSafariDelegate.h; sourceTree = "<group>"; };
+		0E308155206D127200ECA023 /* default_es.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_es.jpg; sourceTree = "<group>"; };
 		0E3EA1DE205F8CFB005E50EA /* PromiseKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromiseKitTests.m; sourceTree = "<group>"; };
 		0E8FEE1F203BB3E900297CE3 /* WatchNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8FEE22203BB3E900297CE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E30814A206B694000ECA023 /* SafariServices.framework in Frameworks */,
 				62F4D8B5F8799340F102A401 /* Pods_WatchNBA.framework in Frameworks */,
 				CB3D6C30263BDCC3C1EBBA4D /* Pods_Watch_WatchNBA.framework in Frameworks */,
 			);
@@ -266,6 +272,7 @@
 				0EA82725203D4AB2005DEE22 /* NBAGameViewController.m */,
 				0EA827482043D398005DEE22 /* NBAGameTableViewModelProtocol.h */,
 				0EE66954204CDD1400361E12 /* NBAGameTableViewReloadDelegate.h */,
+				0E308151206B70C000ECA023 /* NBAGameTableViewPresentSafariDelegate.h */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -286,6 +293,7 @@
 		0EA827392043B6E8005DEE22 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0E308155206D127200ECA023 /* default_es.jpg */,
 				0EA8273A2043B6E8005DEE22 /* default_player.png */,
 				0EA8273B2043B6E8005DEE22 /* nba_logo.png */,
 			);
@@ -389,6 +397,7 @@
 		400CCCE99FF3EE84A19F9C0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E308149206B694000ECA023 /* SafariServices.framework */,
 				86059CD63F0D0C2B0108E243 /* Pods_WatchNBA.framework */,
 				290587C5298E71D6C4AD6CCC /* Pods_Watch_WatchNBA.framework */,
 				7FF356D75930F03E7039C7D2 /* Pods_Watch_WatchNBATests.framework */,
@@ -500,6 +509,7 @@
 				0E8FEE2F203BB3E900297CE3 /* LaunchScreen.storyboard in Resources */,
 				0EA8273D2043B6E8005DEE22 /* nba_logo.png in Resources */,
 				0E8FEE2C203BB3E900297CE3 /* Assets.xcassets in Resources */,
+				0E308156206D127300ECA023 /* default_es.jpg in Resources */,
 				0EA8273C2043B6E8005DEE22 /* default_player.png in Resources */,
 				0E8FEE2A203BB3E900297CE3 /* Main.storyboard in Resources */,
 			);
