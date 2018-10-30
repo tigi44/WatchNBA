@@ -1,6 +1,6 @@
 language: objective-c
-xcode_project: WatchNBA.xcodeproj
-xcode_scheme: WatchNBATests
+xcode_workspace: WatchNBA.xcworkspace
+xcode_scheme: WatchNBA
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 branches:
   only:
