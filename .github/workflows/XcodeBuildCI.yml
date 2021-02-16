@@ -1,0 +1,29 @@
+name: XcodeBuildCI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=14.3,name=iPhone 12 Pro Max']
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set XCode Version
+      run: sudo xcode-select -s /Applications/Xcode_12.3.app
+    - name: Install Dependencies
+      run: pod install --repo-update
+    - name: Build
+      run: |
+        xcodebuild clean build -project WatchNBA.xcworkspace -scheme WatchNBA -destination ${{ matrix.destination }}
+    - name: Run Tests
+      run: |
+        xcodebuild clean test -project WatchNBA.xcworkspace -scheme WatchNBA -destination ${{ matrix.destination }}
