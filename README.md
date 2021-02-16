@@ -1,5 +1,5 @@
 # WatchNBA
-[![Build Status](https://travis-ci.org/tigi44/WatchNBA.svg?branch=master)](https://travis-ci.org/tigi44/WatchNBA)
+![XcodeBuildCI](https://github.com/tigi44/WatchNBA/workflows/XcodeBuildCI/badge.svg)
 
 - Watch stats of today's NBA games
 
