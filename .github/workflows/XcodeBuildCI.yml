@@ -23,7 +23,7 @@ jobs:
       run: pod install --repo-update
     - name: Build
       run: |
-        xcodebuild clean build -project WatchNBA.xcworkspace -scheme WatchNBA -destination "${{ matrix.destination }}"
+        xcodebuild clean build -workspace WatchNBA.xcworkspace -scheme WatchNBA -destination "${{ matrix.destination }}"
     - name: Run Tests
       run: |
-        xcodebuild clean test -project WatchNBA.xcworkspace -scheme WatchNBA -destination "${{ matrix.destination }}"
+        xcodebuild clean test -workspace WatchNBA.xcworkspace -scheme WatchNBA -destination "${{ matrix.destination }}"
